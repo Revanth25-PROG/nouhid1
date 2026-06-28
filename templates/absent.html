@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Absent Students</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='absent.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='atten.css') }}">
+</head>
+<body>
+    <div style="margin: 20px; text-align: center;">
+        <h2>Absent Students</h2>
+        <table border="1" style="margin: 0 auto; background: white; width: 80%; text-align: left;">
+            <tr>
+                <th>ID</th>
+                <th>Roll No</th>
+                <th>Name</th>
+            </tr>
+            {% for s in student %}
+            <tr>
+                <td>{{ s.id }}</td>
+                <td>{{ s.roll_no }}</td>
+                <td>{{ s.name }}</td>
+            </tr>
+            {% else %}
+            <tr><td colspan="3" style="text-align: center;">No absent students found</td></tr>
+            {% endfor %}
+        </table>
+    </div>
+
+<button class="menu-btn" onclick="toggleSidebar()">☰</button>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+
+    <h2>Admin Panel</h2>
+
+    <a href="{{ url_for('dashboard') }}">🏠 Dashboard</a>
+
+    <a href="{{ url_for('present_students') }}">✅ Present Students</a>
+
+    <a href="{{ url_for('logout') }}">🚪 Logout</a>
+
+</div>
+
+<!-- JavaScript -->
+<script>
+function toggleSidebar() {
+    document.getElementById("sidebar").classList.toggle("active");
+}
+</script>
+</body>
+</html>

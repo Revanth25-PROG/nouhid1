@@ -1,0 +1,79 @@
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f3e8ff; /* Light Violet */
+    min-height: 100vh;
+}
+
+/* Student Name Box */
+.student-box {
+    width: fit-content;
+    margin: 30px auto;
+    padding: 15px 35px;
+    background: white;
+    border: 2px solid #a855f7;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    color: #6b21a8;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+/* Menu Button */
+.menu-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    background: #7e22ce;
+    color: white;
+    border: none;
+    padding: 10px 14px;
+    font-size: 22px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.menu-btn:hover {
+    background: #6b21a8;
+}
+
+/* Sidebar */
+.sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100%;
+    background: #7e22ce;
+    transition: 0.3s;
+    padding-top: 60px;
+}
+
+.sidebar.active {
+    left: 0;
+}
+
+.sidebar h2 {
+    color: white;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 15px 20px;
+    transition: 0.3s;
+}
+
+.sidebar a:hover {
+    background: #9333ea;
+}   

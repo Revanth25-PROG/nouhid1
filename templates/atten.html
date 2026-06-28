@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Dashboard</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='atten.css') }}">
+</head>
+<body>
+
+    <table border="1">
+    <tr>
+        <th>No of Students Present</th>
+        <th>No of Students Absent</th>
+        <th>Total Students</th>
+    </tr>
+
+    <tr>
+        <td>{{ present }}</td>
+        <td>{{ absent }}</td>
+        <td>{{ total }}</td>
+    </tr>
+</table>
+
+<!-- Menu Button -->
+<button class="menu-btn" onclick="toggleSidebar()">☰</button>
+
+<!-- Sidebar -->
+<div class="sidebar" id="sidebar">
+
+    <h2>Admin Panel</h2>
+
+    <a href="{{ url_for('dashboard') }}">🏠 Dashboard</a>
+
+    <a href="{{ url_for('present_students') }}">✅ Present Students</a>
+
+    <a href="{{ url_for('logout') }}">🚪 Logout</a>
+
+</div>
+
+<!-- JavaScript -->
+<script>
+function toggleSidebar() {
+    document.getElementById("sidebar").classList.toggle("active");
+}
+</script>
+</body>
+</html>
